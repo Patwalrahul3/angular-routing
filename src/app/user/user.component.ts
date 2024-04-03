@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-user',
@@ -6,5 +7,19 @@ import { Component } from '@angular/core';
   styleUrls: ['./user.component.css']
 })
 export class UserComponent {
+
+  constructor(private router: Router){
+
+  }
+
+
+
+
+  navigate(){
+
+    // this.router.navigateByUrl('/categories')
+    this.router.navigate(['/categories'])
+
+  }
 
 }
