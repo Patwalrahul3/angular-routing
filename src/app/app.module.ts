@@ -7,10 +7,12 @@ import { HomeComponent } from './home/home.component';
 import { CategoriesComponent } from './categories/categories.component';
 import { UserComponent } from './user/user.component';
 import {  RouterModule, Routes } from '@angular/router';
+import { UsersComponent } from './users/users.component';
 
 const appRoutes : Routes = [
   {path: '' , component: HomeComponent},
-  {path: 'user' , component: UserComponent},
+  {path: 'users' , component: UsersComponent},
+  {path: 'users/:id/:name' , component: UserComponent},
   {path: 'categories' , component: CategoriesComponent},
 ]
 
@@ -19,7 +21,8 @@ const appRoutes : Routes = [
     AppComponent,
     HomeComponent,
     CategoriesComponent,
-    UserComponent
+    UserComponent,
+    UsersComponent
   ],
   imports: [
     BrowserModule,
