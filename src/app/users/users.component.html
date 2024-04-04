@@ -1,5 +1,15 @@
-<div>
+<!-- <div>
     <button (click)="navigate()">Go To Categories</button>
 </div>
 
-<a [routerLink]="['/users', 1, 'tomar']" [queryParams]="{page: 1, search: 'tomar'}" [fragment]="'loading'">Get Tomar Details</a>
+<a [routerLink]="['/users', 1, 'tomar']" [queryParams]="{page: 1, search: 'tomar'}" [fragment]="'loading'">Get Tomar Details</a> -->
+
+<ul class="nav flex-column">
+    <li class="nav-item"><a class="nav-link" [routerLink]="['/users',1,'Monika']">Get Monika Details</a></li>
+    <li class="nav-item"><a class="nav-link" [routerLink]="['/users',2,'Simran']">Get Simran Details</a></li>
+    <li class="nav-item"><a class="nav-link"  [routerLink]="['/users',3,'Sakshi']">Get Sakshi Details</a></li>
+</ul>
+
+<div>
+    <router-outlet></router-outlet>
+</div>
