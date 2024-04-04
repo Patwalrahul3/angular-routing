@@ -1,3 +1,5 @@
 <div>
     <button (click)="navigate()">Go To Categories</button>
 </div>
+
+<a [routerLink]="['/users', 1, 'tomar']" [queryParams]="{page: 1, search: 'tomar'}" [fragment]="'loading'">Get Tomar Details</a>

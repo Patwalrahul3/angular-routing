@@ -28,6 +28,14 @@ export class UserComponent implements OnInit {
     } 
   })
 
+  this.route.queryParams.subscribe(data =>{
+    console.log(data)
+  })
+
+  this.route.fragment.subscribe(data =>{
+    console.log(data)
+  })
+
 
   }
 
