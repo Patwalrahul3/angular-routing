@@ -8,5 +8,13 @@
 </div>
 
 <div>
-    <a [routerLink]="['/users', 1, 'rahul']">Get Details of Rahul</a>
+    <a [routerLink]="['/users', 1, 'rahul']" 
+    [queryParams]="{page: 1, search: 'simran'}"
+    [fragment]="'load'"
+    >Get Details of Rahul</a>
+</div>  
+
+
+<div>
+    <a (click)="getDetailPatwal()" >Get Details of Patwal</a>
 </div>  

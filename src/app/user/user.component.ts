@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, Params } from '@angular/router';
+import { ActivatedRoute, Params, Router } from '@angular/router';
 
 @Component({
   selector: 'app-user',
@@ -10,7 +10,7 @@ export class UserComponent implements OnInit {
 
   user! : {id: string; name: string}
 
-  constructor(private route: ActivatedRoute){
+  constructor(private route: ActivatedRoute, private router: Router){
 
   }
 
@@ -21,8 +21,7 @@ export class UserComponent implements OnInit {
   } 
 
   this.route.params.subscribe((data:Params) =>{
-    console.log(data);
-    
+  
     this.user={
       id:  data['id'],
       name: data['name']
@@ -30,6 +29,16 @@ export class UserComponent implements OnInit {
   })
 
 
+  }
+
+
+
+
+  getDetailPatwal(){
+    this.router.navigate(['/users','2','Patwal'], {
+      queryParams: {page: 1, search: 'patwal'},
+      fragment:'loading'
+    })
   }
 
 
