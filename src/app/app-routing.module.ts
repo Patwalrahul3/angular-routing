@@ -5,10 +5,13 @@ import { UsersComponent } from './users/users.component';
 import { UserComponent } from './user/user.component';
 import { CategoriesComponent } from './categories/categories.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { AuthGuardService } from './services/Guards/auth-guard-service';
 
 const routes : Routes = [
   {path: '' , component: HomeComponent},
-  {path: 'users' , component: UsersComponent ,
+  {path: 'users' , component: UsersComponent , 
+  canActivate: [AuthGuardService],
+
    children:[{path: ':id/:name' , component: UserComponent}],
   },
  

@@ -8,6 +8,8 @@ import { CategoriesComponent } from './categories/categories.component';
 import { UserComponent } from './user/user.component';
 import { UsersComponent } from './users/users.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { AuthService } from './services/auth.service';
+import { AuthGuardService } from './services/Guards/auth-guard-service';
 
 
 @NgModule({
@@ -23,7 +25,7 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
     BrowserModule,
     AppRoutingModule,
   ],
-  providers: [],
+  providers: [AuthService, AuthGuardService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
