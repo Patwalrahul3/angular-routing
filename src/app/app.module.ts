@@ -12,6 +12,7 @@ import { AuthService } from './services/auth.service';
 import { AuthGuardService } from './services/Guards/auth-guard-service';
 import { EditUserComponent } from './edit-user/edit-user.component';
 import { DeactivateGuardService } from './services/Guards/deactivate-guard-service';
+import { FormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -27,6 +28,7 @@ import { DeactivateGuardService } from './services/Guards/deactivate-guard-servi
   imports: [
     BrowserModule,
     AppRoutingModule,
+    FormsModule
   ],
   providers: [AuthService, AuthGuardService, DeactivateGuardService],
   bootstrap: [AppComponent]
