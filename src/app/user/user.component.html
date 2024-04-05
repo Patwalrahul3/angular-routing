@@ -7,8 +7,10 @@
     </div>
 </div>
 
+<button [routerLink]="['/users', 1, 'rahul', 'Edit']"  >Edit User</button>
+
 <div>
-    <a [routerLink]="['/users', 1, 'rahul']" 
+    <a [routerLink]="['/users', 1, 'rahul' ]" 
     [queryParams]="{page: 1, search: 'simran'}"
     [fragment]="'load'"
     >Get Details of Rahul</a>

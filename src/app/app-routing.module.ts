@@ -6,6 +6,8 @@ import { UserComponent } from './user/user.component';
 import { CategoriesComponent } from './categories/categories.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { AuthGuardService } from './services/Guards/auth-guard-service';
+import { EditUserComponent } from './edit-user/edit-user.component';
+import { DeactivateGuardService } from './services/Guards/deactivate-guard-service';
 
 const routes : Routes = [
   {path: '' , component: HomeComponent},
@@ -13,7 +15,11 @@ const routes : Routes = [
   // canActivate: [AuthGuardService],
   canActivateChild: [AuthGuardService],
 
-   children:[{path: ':id/:name' , component: UserComponent}],
+   children:[
+    {path: ':id/:name' , component: UserComponent},
+    {path: ':id/:name/:edit' , component: EditUserComponent, canDeactivate: [DeactivateGuardService]},
+
+   ],
   },
  
   {path: 'categories' , component: CategoriesComponent},

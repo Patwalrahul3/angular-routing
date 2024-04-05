@@ -10,6 +10,8 @@ import { UsersComponent } from './users/users.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { AuthService } from './services/auth.service';
 import { AuthGuardService } from './services/Guards/auth-guard-service';
+import { EditUserComponent } from './edit-user/edit-user.component';
+import { DeactivateGuardService } from './services/Guards/deactivate-guard-service';
 
 
 @NgModule({
@@ -19,13 +21,14 @@ import { AuthGuardService } from './services/Guards/auth-guard-service';
     CategoriesComponent,
     UserComponent,
     UsersComponent,
-    PageNotFoundComponent
+    PageNotFoundComponent,
+    EditUserComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
   ],
-  providers: [AuthService, AuthGuardService],
+  providers: [AuthService, AuthGuardService, DeactivateGuardService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
