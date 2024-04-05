@@ -8,6 +8,7 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
 import { AuthGuardService } from './services/Guards/auth-guard-service';
 import { EditUserComponent } from './edit-user/edit-user.component';
 import { DeactivateGuardService } from './services/Guards/deactivate-guard-service';
+import { UserResolverService } from './services/resolvers/user-resolver-services';
 
 const routes : Routes = [
   {path: '' , component: HomeComponent},
@@ -17,7 +18,9 @@ const routes : Routes = [
 
    children:[
     {path: ':id/:name' , component: UserComponent},
-    {path: ':id/:name/:edit' , component: EditUserComponent, canDeactivate: [DeactivateGuardService]},
+    {path: ':id/:name/:edit' , component: EditUserComponent, 
+    resolve: {user: UserResolverService},
+    canDeactivate: [DeactivateGuardService]},
 
    ],
   },

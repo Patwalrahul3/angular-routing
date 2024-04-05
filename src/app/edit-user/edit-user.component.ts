@@ -16,14 +16,26 @@ export class EditUserComponent implements IDeactivateGuard {
 
 
   ngOnInit(){
-    this.route.params.subscribe((data: Params) =>{
+
+    this.route.data.subscribe((data) =>{
+      console.log(data);
       this.user = {
-        id: data['id'],
-        name: data['name']
+        id: data['user']['id'],
+        name: data['user']['name'],
       }
 
-      this.editUser = {... this.user}
+      this.editUser= {... this.user}
     })
+
+
+    // this.route.params.subscribe((data: Params) =>{
+    //   this.user = {
+    //     id: data['id'],
+    //     name: data['name']
+    //   }
+
+    //   this.editUser = {... this.user}
+    // })
 
   }
 
