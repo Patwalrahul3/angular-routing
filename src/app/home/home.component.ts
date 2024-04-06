@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { Observable, Subscription, interval, map } from 'rxjs';
+import { Observable, Subscription, filter, interval, map } from 'rxjs';
 
 @Component({
   selector: 'app-home',
@@ -32,7 +32,11 @@ export class HomeComponent {
       }, 1000);
     });
 
-    this.intervalSubscription = customObservable.pipe(map((data : number) =>{
+    this.intervalSubscription = customObservable.pipe(filter((data : number) =>{
+        
+       
+       return data == 2
+    }),map((data : number) =>{
       //  return 'count is' + (data * 2)
        return `count is ${data * 2} `
     })).subscribe(
