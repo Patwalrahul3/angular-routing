@@ -7,6 +7,10 @@ import { NgForm } from '@angular/forms';
   styleUrls: ['./template-form.component.css']
 })
 export class TemplateFormComponent {
+
+  gender =  "male"
+  about!: string;
+
 @ViewChild('f') signupForm!: NgForm;
   
 onFormSubmit(){
