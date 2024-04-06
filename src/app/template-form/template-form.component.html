@@ -3,26 +3,49 @@
     <div class="col-md-12">
       <!-- <form (ngSubmit)="onFormSubmit(f)" #f>  -->
       <!-- <form (ngSubmit)="onFormSubmit(f)" #f="ngForm">  -->
-      <form (ngSubmit)="onFormSubmit()" #f="ngForm"> 
+      <form (ngSubmit)="onFormSubmit()" #f="ngForm">
+        <button class="btn btn-sm btn-info mb-4" (click)="fillValues()">
+          Fill Values
+        </button>
 
-        <button class="btn btn-sm btn-info mb-4" (click)="fillValues()">Fill Values</button>
+        <div *ngIf="userDetails.touched && !userDetails.valid">
+          User Detail Required!
+        </div>
 
-        <div *ngIf="userDetails.touched && !userDetails.valid">User Detail Required!</div>
-        
         <div ngModelGroup="userData" #userDetails="ngModelGroup">
-        <div class="form-group">
-          <label for="username">User Name</label>
-          <input type="text" class="form-control" id="username"  name="username" #username="ngModel"  ngModel required/>
-          <span  class="help-text" *ngIf="username.touched && !username.valid">Plese enter Name</span>
-        </div>
+          <div class="form-group">
+            <label for="username">User Name</label>
+            <input
+              type="text"
+              class="form-control"
+              id="username"
+              name="username"
+              #username="ngModel"
+              ngModel
+              required
+            />
+            <span class="help-text" *ngIf="username.touched && !username.valid"
+              >Plese enter Name</span
+            >
+          </div>
 
-        <div class="form-group">
-          <label for="email">email</label>
-          <input type="text" class="form-control" id="email" name="email" ngModel required email #email="ngModel" />
-         <span  class="help-text" *ngIf="email.touched && !email.valid">Plese enter valid email</span>
+          <div class="form-group">
+            <label for="email">email</label>
+            <input
+              type="text"
+              class="form-control"
+              id="email"
+              name="email"
+              ngModel
+              required
+              email
+              #email="ngModel"
+            />
+            <span class="help-text" *ngIf="email.touched && !email.valid"
+              >Plese enter valid email</span
+            >
+          </div>
         </div>
-
-      </div>
         <!-- <div class="form-group">
           <label for="email">email</label>
           <input type="text" class="form-control" id="email" name="email" ngModel required email />
@@ -31,8 +54,13 @@
 
         <div class="form-group">
           <label for="gender">gender</label>
-          <!-- <select class="form-control" id="gender" name="gender" ngModel="female"> -->  
-          <select class="form-control" id="gender" name="gender" [ngModel]="gender">
+          <!-- <select class="form-control" id="gender" name="gender" ngModel="female"> -->
+          <select
+            class="form-control"
+            id="gender"
+            name="gender"
+            [ngModel]="gender"
+          >
             <option value="male">Male</option>
             <option value="female">Female</option>
           </select>
@@ -40,15 +68,31 @@
 
         <div class="form-group">
           <label for="About">About</label>
-          <textarea class="form-control" cols="3" name="about" [(ngModel)]="about" ></textarea>
+          <textarea
+            class="form-control"
+            cols="3"
+            name="about"
+            [(ngModel)]="about"
+          ></textarea>
         </div>
-        <p>{{about}}</p>
+        <p>{{ about }}</p>
 
         <div class="mt-2">
-            <button type="submit" class="btn btn-primary" [disabled]="!f.valid">Add</button>
-
+          <button type="submit" class="btn btn-primary" [disabled]="!f.valid">
+            Add
+          </button>
         </div>
       </form>
     </div>
+
+    <div *ngIf="submitted">
+      <h3>Your Data :</h3>
+      <div>user : {{user.username}}</div>
+      <div>email : {{user.email}}</div>
+      <div>Gender : {{user.gender}}</div>
+      <div>about : {{user.about}}</div>
+
+    </div>
+
   </div>
 </div>
