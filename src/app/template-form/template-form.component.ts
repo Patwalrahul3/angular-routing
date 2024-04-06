@@ -19,4 +19,27 @@ onFormSubmit(){
 
   }
 
+  // setValue
+  // fillValues(){
+  //   this.signupForm.form.setValue({
+  //     userData : {
+  //       username: "Rahul Patwal",
+  //       email: "patwalrahul3@gmail.com"
+  //     },
+  //     gender: 'male',
+  //     about: 'ALL Rounder'
+  //   })
+  // }
+  // patchValue
+  fillValues(){
+    this.signupForm.form.patchValue({
+      userData : {
+        username: "Rahul Patwal",
+        email: "patwalrahul3@gmail.com"
+      },
+      // gender: 'male',
+      // about: 'ALL Rounder'
+    })
+  }
+
 }

@@ -5,12 +5,15 @@
       <!-- <form (ngSubmit)="onFormSubmit(f)" #f="ngForm">  -->
       <form (ngSubmit)="onFormSubmit()" #f="ngForm"> 
 
-        <div ngModelGroup="userData" #userDetails="ngModelGroup">
+        <button class="btn btn-sm btn-info mb-4" (click)="fillValues()">Fill Values</button>
 
         <div *ngIf="userDetails.touched && !userDetails.valid">User Detail Required!</div>
+        
+        <div ngModelGroup="userData" #userDetails="ngModelGroup">
         <div class="form-group">
           <label for="username">User Name</label>
-          <input type="text" class="form-control" id="username"  name="username" ngModel required/>
+          <input type="text" class="form-control" id="username"  name="username" #username="ngModel"  ngModel required/>
+          <span  class="help-text" *ngIf="username.touched && !username.valid">Plese enter Name</span>
         </div>
 
         <div class="form-group">
