@@ -4,6 +4,10 @@
       <!-- <form (ngSubmit)="onFormSubmit(f)" #f>  -->
       <!-- <form (ngSubmit)="onFormSubmit(f)" #f="ngForm">  -->
       <form (ngSubmit)="onFormSubmit()" #f="ngForm"> 
+
+        <div ngModelGroup="userData" #userDetails="ngModelGroup">
+
+        <div *ngIf="userDetails.touched && !userDetails.valid">User Detail Required!</div>
         <div class="form-group">
           <label for="username">User Name</label>
           <input type="text" class="form-control" id="username"  name="username" ngModel required/>
@@ -14,6 +18,8 @@
           <input type="text" class="form-control" id="email" name="email" ngModel required email #email="ngModel" />
          <span  class="help-text" *ngIf="email.touched && !email.valid">Plese enter valid email</span>
         </div>
+
+      </div>
         <!-- <div class="form-group">
           <label for="email">email</label>
           <input type="text" class="form-control" id="email" name="email" ngModel required email />
