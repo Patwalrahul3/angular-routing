@@ -2,33 +2,60 @@
   <div class="row">
     <div class="col-md-12">
       <form [formGroup]="signupForm" (ngSubmit)="onSubmit()">
-        <div class="form-group">
-          <label for="username">User Name</label>
-          <input
-            type="text"
-            class="form-control"
-            id="username"
-            name="username"
-            formControlName="username"
-           
-          />
-          <span class="help-text" *ngIf="signupForm.get('username')?.touched && !signupForm.get('username')?.valid">Plese enter Name</span>
-        </div>
+        <div formGroupName="userData">
+          <div class="form-group">
+            <label for="username">User Name</label>
+            <input
+              type="text"
+              class="form-control"
+              id="username"
+              name="username"
+              formControlName="username"
+            />
+            <span
+              class="help-text"
+              *ngIf="
+                signupForm.get('userData.username')?.touched &&
+                !signupForm.get('userData.username')?.valid
+              "
+              >Plese enter Name</span
+            >
+          </div>
 
-        <div class="form-group">
-          <label for="email">email</label>
-          <input type="text" class="form-control" id="email" name="email" formControlName="email" />
-          <span class="help-text" *ngIf="signupForm.get('email')?.touched && !signupForm.get('email')?.valid">Plese Enter Valid Email</span>
+          <div class="form-group">
+            <label for="email">email</label>
+            <input
+              type="text"
+              class="form-control"
+              id="email"
+              name="email"
+              formControlName="email"
+            />
+            <span
+              class="help-text"
+              *ngIf="
+                signupForm.get('userData.email')?.touched &&
+                !signupForm.get('userData.email')?.valid
+              "
+              >Plese Enter Valid Email</span
+            >
+          </div>
         </div>
 
         <div class="mt-3" *ngFor="let gender of genders">
           <label>
-            <input type="radio" name="gender" [value]="gender" formControlName="gender" /> {{ gender }}
+            <input
+              type="radio"
+              name="gender"
+              [value]="gender"
+              formControlName="gender"
+            />
+            {{ gender }}
           </label>
         </div>
 
         <div class="mt-2">
-          <button type="submit" class="btn btn-primary">Add</button>
+          <button type="submit" class="btn btn-primary" [disabled]="!this.signupForm.valid">Add</button>
         </div>
       </form>
     </div>
