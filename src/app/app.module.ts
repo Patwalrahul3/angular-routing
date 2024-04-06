@@ -12,10 +12,11 @@ import { AuthService } from './services/auth.service';
 import { AuthGuardService } from './services/Guards/auth-guard-service';
 import { EditUserComponent } from './edit-user/edit-user.component';
 import { DeactivateGuardService } from './services/Guards/deactivate-guard-service';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { UserResolverService } from './services/resolvers/user-resolver-services';
 import { userService } from './services/user.service';
 import { TemplateFormComponent } from './template-form/template-form.component';
+import { ReactiveComponent } from './reactive/reactive.component';
 
 
 @NgModule({
@@ -27,12 +28,14 @@ import { TemplateFormComponent } from './template-form/template-form.component';
     UsersComponent,
     PageNotFoundComponent,
     EditUserComponent,
-    TemplateFormComponent
+    TemplateFormComponent,
+    ReactiveComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [AuthService, AuthGuardService, DeactivateGuardService, UserResolverService, userService],
   bootstrap: [AppComponent]
