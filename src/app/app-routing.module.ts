@@ -9,6 +9,7 @@ import { AuthGuardService } from './services/Guards/auth-guard-service';
 import { EditUserComponent } from './edit-user/edit-user.component';
 import { DeactivateGuardService } from './services/Guards/deactivate-guard-service';
 import { UserResolverService } from './services/resolvers/user-resolver-services';
+import { TemplateFormComponent } from './template-form/template-form.component';
 
 const routes : Routes = [
   {path: '' , component: HomeComponent},
@@ -26,6 +27,7 @@ const routes : Routes = [
   },
  
   {path: 'categories' , component: CategoriesComponent},
+  {path: 'templateform' , component: TemplateFormComponent},
   {path: 'page-not-found', component: PageNotFoundComponent},
   {path: '**', redirectTo: 'page-not-found'}
 ]

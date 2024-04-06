@@ -15,6 +15,7 @@ import { DeactivateGuardService } from './services/Guards/deactivate-guard-servi
 import { FormsModule } from '@angular/forms';
 import { UserResolverService } from './services/resolvers/user-resolver-services';
 import { userService } from './services/user.service';
+import { TemplateFormComponent } from './template-form/template-form.component';
 
 
 @NgModule({
@@ -25,7 +26,8 @@ import { userService } from './services/user.service';
     UserComponent,
     UsersComponent,
     PageNotFoundComponent,
-    EditUserComponent
+    EditUserComponent,
+    TemplateFormComponent
   ],
   imports: [
     BrowserModule,
