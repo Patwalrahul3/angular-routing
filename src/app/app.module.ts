@@ -18,6 +18,7 @@ import { userService } from './services/user.service';
 import { TemplateFormComponent } from './template-form/template-form.component';
 import { ReactiveComponent } from './reactive/reactive.component';
 import { FilterpipeComponent } from './filterpipe/filterpipe.component';
+import { ShortenPipe } from './pipe/shorten.pipe';
 
 
 @NgModule({
@@ -31,7 +32,8 @@ import { FilterpipeComponent } from './filterpipe/filterpipe.component';
     EditUserComponent,
     TemplateFormComponent,
     ReactiveComponent,
-    FilterpipeComponent
+    FilterpipeComponent,
+    ShortenPipe
   ],
   imports: [
     BrowserModule,
