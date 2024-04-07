@@ -54,6 +54,24 @@
           </label>
         </div>
 
+        <div formArrayName="hobbies">
+        <div class="mt-5">
+            <button type="submit" class="btn btn-primary" (click)="addHobby()">Add Hobby</button> 
+        </div>
+
+        <div class="form-group" *ngFor="let hobby of hobbiesControl; let i = index">
+          <input
+            type="text"
+            class="form-control"
+            [formControlName]="i"
+           
+          />
+       
+        </div>
+
+      </div>
+        
+
         <div class="mt-2">
           <button type="submit" class="btn btn-primary" [disabled]="!this.signupForm.valid">Add</button>
         </div>
