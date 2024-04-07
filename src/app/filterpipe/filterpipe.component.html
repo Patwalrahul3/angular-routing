@@ -1,7 +1,13 @@
 <div class="container">
-    <div class="rox">
+    <div class="row">
         <div class="col-md-12">
-            <div *ngFor="let user of users">
+            <input type="text" placeholder="search.." [(ngModel)]="filteredString" />
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-12">
+            <div *ngFor="let user of users | searchfilter:filteredString" class="my-3" >
             <div>Name: {{user.name | shorten:3  }}</div>
             <div>Joined Date: {{user.joinedDate | date : 'fullDate' | uppercase}}</div>
             </div>

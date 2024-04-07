@@ -6,7 +6,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./filterpipe.component.css']
 })
 export class FilterpipeComponent {
-
+  filteredString : string = "";
   users = [
     {name: 'Rahul', joinedDate: new Date(15,2, 2023)},
     {name: 'Manish', joinedDate: new Date(19,3, 2022)},

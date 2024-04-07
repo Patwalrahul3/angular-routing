@@ -19,6 +19,7 @@ import { TemplateFormComponent } from './template-form/template-form.component';
 import { ReactiveComponent } from './reactive/reactive.component';
 import { FilterpipeComponent } from './filterpipe/filterpipe.component';
 import { ShortenPipe } from './pipe/shorten.pipe';
+import { SearchfilterPipe } from './pipe/searchfilter.pipe';
 
 
 @NgModule({
@@ -33,7 +34,8 @@ import { ShortenPipe } from './pipe/shorten.pipe';
     TemplateFormComponent,
     ReactiveComponent,
     FilterpipeComponent,
-    ShortenPipe
+    ShortenPipe,
+    SearchfilterPipe
   ],
   imports: [
     BrowserModule,
