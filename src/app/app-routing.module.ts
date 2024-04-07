@@ -11,6 +11,7 @@ import { DeactivateGuardService } from './services/Guards/deactivate-guard-servi
 import { UserResolverService } from './services/resolvers/user-resolver-services';
 import { TemplateFormComponent } from './template-form/template-form.component';
 import { ReactiveComponent } from './reactive/reactive.component';
+import { FilterpipeComponent } from './filterpipe/filterpipe.component';
 
 const routes : Routes = [
   {path: '' , component: HomeComponent},
@@ -30,6 +31,7 @@ const routes : Routes = [
   {path: 'categories' , component: CategoriesComponent},
   {path: 'templateform' , component: TemplateFormComponent},
   {path: 'reactive' , component: ReactiveComponent},
+  {path: 'filterpipe' , component: FilterpipeComponent},
   {path: 'page-not-found', component: PageNotFoundComponent},
   {path: '**', redirectTo: 'page-not-found'}
 ]

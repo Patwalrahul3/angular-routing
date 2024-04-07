@@ -17,6 +17,7 @@ import { UserResolverService } from './services/resolvers/user-resolver-services
 import { userService } from './services/user.service';
 import { TemplateFormComponent } from './template-form/template-form.component';
 import { ReactiveComponent } from './reactive/reactive.component';
+import { FilterpipeComponent } from './filterpipe/filterpipe.component';
 
 
 @NgModule({
@@ -29,7 +30,8 @@ import { ReactiveComponent } from './reactive/reactive.component';
     PageNotFoundComponent,
     EditUserComponent,
     TemplateFormComponent,
-    ReactiveComponent
+    ReactiveComponent,
+    FilterpipeComponent
   ],
   imports: [
     BrowserModule,
