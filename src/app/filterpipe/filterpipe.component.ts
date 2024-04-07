@@ -14,4 +14,11 @@ export class FilterpipeComponent {
     {name: 'Karan', joinedDate: new Date(18,1, 2024)},
   ]
 
+  addUsers(){
+    this.users.push({
+      name: 'sample',
+      joinedDate: new Date(1,1,1990)
+    })
+  }
+
 }
