@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { FormArray, FormControl, FormGroup, Validators } from '@angular/forms';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-reactive',
@@ -26,12 +27,24 @@ export class ReactiveComponent {
           Validators.required,
           this.IsDuplicatedRestrictedName.bind(this),
         ]),
-        email: new FormControl('', [Validators.required, Validators.email]),
+        email: new FormControl('', 
+        [Validators.required, Validators.email]),
       }),
 
       gender: new FormControl('female'),
       hobbies: new FormArray([]),
     });
+
+    // this.signupForm.valueChanges.subscribe(data =>{
+    //   console.log(data);
+    // })
+
+    // this tells about the whole form status- valid or invalid
+    this.signupForm.statusChanges.subscribe(data =>{
+      console.log(data);
+    })
+
+
   }
 
   onSubmit() {
@@ -53,4 +66,6 @@ export class ReactiveComponent {
 
     return null;
   }
+
+
 }
