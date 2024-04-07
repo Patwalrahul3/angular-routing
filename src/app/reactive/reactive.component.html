@@ -12,14 +12,17 @@
               name="username"
               formControlName="username"
             />
-            <span
+            
+            
+            <div
               class="help-text"
               *ngIf="
                 signupForm.get('userData.username')?.touched &&
-                !signupForm.get('userData.username')?.valid
-              "
-              >Plese enter Name</span
-            >
+                !signupForm.get('userData.username')?.valid">
+              <span *ngIf="this.signupForm.get('userData.username')?.errors?.['required']">Name is Required.</span>
+              <span *ngIf="this.signupForm.get('userData.username')?.errors?.['nameIsRestricted']">
+                Name Already Found on Database.</span>
+              </div>
           </div>
 
           <div class="form-group">
@@ -73,7 +76,7 @@
         
 
         <div class="mt-2">
-          <button type="submit" class="btn btn-primary" [disabled]="!this.signupForm.valid">Add</button>
+          <button type="submit" class="btn btn-primary" >Add</button>
         </div>
       </form>
     </div>
